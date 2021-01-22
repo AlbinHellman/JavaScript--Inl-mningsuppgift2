@@ -1,0 +1,37 @@
+.header {
+    text-align: center;
+    height: 6rem;
+    background-color: rgb(69, 69, 241);
+}
+
+.header h1{
+    padding-top: 1.5rem;
+}
+
+
+.text1 {
+    margin-top: 7rem;
+}
+
+.inputUno {
+    text-align: center;
+}
+
+.inputUno p{
+    font-weight: bold;
+    font-family: 'Roboto Slab', sans-serif;
+    font-size: 1.2rem;
+}
+
+.knapp {
+    text-align: center;
+    margin-top: 2rem;
+    
+}
+
+.knappen {
+    background-color: rgb(69, 69, 241);
+    padding: 9px 15px;
+    display: inline block;
+    border-radius: 10px;
+}
