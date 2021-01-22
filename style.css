@@ -31,7 +31,43 @@
 
 .knappen {
     background-color: rgb(69, 69, 241);
-    padding: 9px 15px;
+    padding: 5px 15px;
     display: inline block;
     border-radius: 10px;
 }
+
+.knappen p{
+    font-weight: bold;
+    font-family: sans-serif;
+    position: relative;
+    top: 0.5rem;
+}
+
+.container {
+    margin-top: 2rem;
+    padding: 1rem;
+    
+   
+}
+
+.lista {
+    outline: auto;
+    outline-color: rgb(69, 69, 241);
+    display: flex;
+    margin: auto;
+    width: 500px;
+    padding: 1rem;
+}
+
+.MinTitel {
+    font-family: sans-serif;
+    font-weight: lighter;
+}
+
+.Delete {
+   margin-left: auto;
+   background-color: rgb(69, 69, 241);
+   
+}
+
+
