@@ -25,6 +25,16 @@ const newLista = (lista) => {
     
     let MinTitel = document.createElement('h2');
     MinTitel.classList.add('MinTitel');
+
+    let button = document.createElement('button');
+    button.classList.add('Delete');
+    button.innerText = 'Ta Bort';
+    button.addEventListener('click', () => console.log('lista.id'))
+
+    lista.appendChild(MinTitel);
+    lista.appendChild(Delete);
+    container.appendChild(MinTitel);
+    output.appendChild(container);
 }
 
 const listListan = () => {
