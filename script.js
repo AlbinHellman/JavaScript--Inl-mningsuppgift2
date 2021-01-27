@@ -3,43 +3,44 @@ const Input = document.querySelector('#AddInput')
 const Knapp = document.querySelector('#Submit')
 const output = document.querySelector('#output')
 
-let lista = [] ;
+let läggtill = [] ;
 
-const fetchListan = () => {
+const fetchLäggtill = () => {
     fetch('https://jsonplaceholder.typicode.com/todos')
     .then(res => res.json())
     .then(data => {
         lista = data;
-        console.log(lista);
-        listListan();
+        console.log(läggtill);
+        listLäggtill();
     })
 }
-fetchListan();
+fetchLäggtill();
 
 const newLista = (lista) => {
     let container = document.createElement('div');
     container.classList.add('container');
 
-    let lista = document.createElement('div');
-    lista.classList.add('lista');
+    let listan = document.createElement('div');
+    lista.classList.add('listan');
     
     let MinTitel = document.createElement('h2');
     MinTitel.classList.add('MinTitel');
+    MinTitel.innerText = lista.MinTitel;
 
     let button = document.createElement('button');
     button.classList.add('Delete');
     button.innerText = 'Ta Bort';
     button.addEventListener('click', () => console.log('lista.id'))
 
-    lista.appendChild(MinTitel);
-    lista.appendChild(Delete);
-    container.appendChild(MinTitel);
+    listan.appendChild(MinTitel);
+    listan.appendChild(Delete);
+    container.appendChild(listan);
     output.appendChild(container);
 }
 
-const listListan = () => {
+const listLäggtill = () => {
     output.innerHTML = '';
-    lista.forEach(lista => {
+    läggtill.forEach(lista => {
         newLista(lista);
     })
 
