@@ -3,6 +3,30 @@ const Input = document.querySelector('#AddInput')
 const Knapp = document.querySelector('#Submit')
 const output = document.querySelector('#output')
 
+let lista = [] ;
+
+const fetchListan = () => {
+    fetch('https://jsonplaceholder.typicode.com/todos')
+    .then(res => res.json())
+    .then(data => {
+        lista = data;
+        console.log(lista);
+        listListan();
+    })
+}
+fetchListan();
+
+const newLista = () => {
+    let container = document.createElement('div');
+    container.classList.add('container');
+    
+    let lista = document.createElement('div');
+    lista.classList.add('lista');
+    
+    let MinTitel = document.createElement('h2');
+    MinTitel.classList.add('MinTitel');
+}
+
 const validatetext2 = id => {
     const input = document.querySelector('#'+id);
     const error = document.querySelector('#'+id+'-error');
