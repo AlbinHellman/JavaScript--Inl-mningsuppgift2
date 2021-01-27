@@ -16,15 +16,23 @@ const fetchListan = () => {
 }
 fetchListan();
 
-const newLista = () => {
+const newLista = (lista) => {
     let container = document.createElement('div');
     container.classList.add('container');
-    
+
     let lista = document.createElement('div');
     lista.classList.add('lista');
     
     let MinTitel = document.createElement('h2');
     MinTitel.classList.add('MinTitel');
+}
+
+const listListan = () => {
+    output.innerHTML = '';
+    lista.forEach(lista => {
+        newLista(lista);
+    })
+
 }
 
 const validatetext2 = id => {
