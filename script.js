@@ -23,16 +23,16 @@ const newLista = (lista) => {
     let listan = document.createElement('div');
     lista.classList.add('listan');
     
-    let MinTitel = document.createElement('h2');
-    MinTitel.classList.add('MinTitel');
-    MinTitel.innerText = lista.MinTitel;
+    let title = document.createElement('h2');
+    title.classList.add('title');
+    title.innerText = lista.title;
 
     let button = document.createElement('button');
     button.classList.add('Delete');
     button.innerText = 'Ta Bort';
     button.addEventListener('click', () => console.log('lista.id'))
 
-    listan.appendChild(MinTitel);
+    listan.appendChild(title);
     listan.appendChild(Delete);
     container.appendChild(listan);
     output.appendChild(container);
@@ -45,6 +45,26 @@ const listLäggtill = () => {
     })
 
 }
+
+const createLista = (MinTitel) => {
+    fetch('https://jsonplaceholder.typicode.com/todos',{
+        method: 'POST',
+        headers: {
+            'content-type': 'application/json; charset=UTF-8'
+        },
+        body: JSON.stringify({
+            title,
+            completed: false
+        })
+    })
+    .then(res => res.json())
+    .then(data => {
+        console.log(data);
+        listLäggtill
+    })
+}
+
+
 
 const validatetext2 = id => {
     const input = document.querySelector('#'+id);
@@ -59,7 +79,11 @@ const validatetext2 = id => {
         }
         else {
             texterror.innerText = '';
+            
+                createLista(AddInput.value);
+                AddInput.value = '';
             return true;
+            
         }
     }
 }
@@ -71,12 +95,19 @@ const validate = () => {
 
         if(input.id === "AddInput") {
             validatetext2(input.id);
+            
         }
     })
 }
 
+
 form.addEventListener('submit', (e) => {
     e.preventDefault();
 
+
+
+    
     validate();
+    
+     
 } )
