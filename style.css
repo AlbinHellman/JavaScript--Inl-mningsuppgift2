@@ -50,7 +50,8 @@
 
 .container {
     margin-top: 2rem;
-    padding: 1rem;
+
+    
     
    
 }
@@ -58,13 +59,13 @@
 .listan {
     outline: auto;
     outline-color: rgb(69, 69, 241);
-    display: flex;
-    margin: auto;
-    width: 500px;
+    margin:auto;
+    width: 400px;
+   
     padding: 1rem;
 }
 
-.title {
+.title1 {
     font-family: sans-serif;
     font-weight: lighter;
 }

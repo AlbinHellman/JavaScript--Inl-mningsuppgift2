@@ -5,18 +5,18 @@ const output = document.querySelector('#output')
 
 let läggtill = [] ;
 
-const fetchLäggtill = () => {
+const fetchTodos = () => {
     fetch('https://jsonplaceholder.typicode.com/todos')
     .then(res => res.json())
     .then(data => {
-        lista = data;
-        console.log(läggtill);
-        listLäggtill();
+        todos = data;
+        console.log(todos);
+        listTodos();
     })
 }
-fetchLäggtill();
+fetchTodos();
 
-const newListan = (listan) => {
+const newTodo = (todo) => {
     let card = document.createElement('div');
     card.classList.add('container');
 
@@ -24,34 +24,34 @@ const newListan = (listan) => {
     innercard.classList.add('listan');
     
     let title = document.createElement('h2');
-    title.classList.add('title');
-    title.innerText = listan.title;
+    title.classList.add('title1');
+    title.innerText = todo.title;
 
     let button = document.createElement('button');
     button.classList.add('Delete');
     button.innerText = 'Ta Bort';
-    button.addEventListener('click', () => console.log('listan.id'))
+    button.addEventListener('click', () => console.log('click'))
 
     innercard.appendChild(title);
     innercard.appendChild(button);
-    card.appendChild();innercard
+    card.appendChild(innercard);
     output.appendChild(card);
 }
 
-const listLäggtill = () => {
+const listTodos = () => {
     output.innerHTML = '';
-    läggtill.forEach(listan => {
-        let _listan = `
+    todos.forEach(todo => {
+        let _todo = `
         <div class="container">
         <div class="listan" id="output">
-            <h2 class="title" id="title">${listan.title}</h2>
+            <h2 class="title" id="title">${todo.id}</h2>
             <button class="Delete">Ta Bort</button>
         </div>
         </div>
         `
-        output.insertAdjacentHTML('beforeend', _listan)
+        output.insertAdjacentHTML('beforeend', _todo);
 
-        newListan(listan);
+        newTodo(todo);
     })
 
 }
@@ -70,7 +70,7 @@ const createListan = (title) => {
     .then(res => res.json())
     .then(data => {
         console.log(data);
-        listLäggtill
+        listTodos
     })
 }
 
