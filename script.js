@@ -16,37 +16,47 @@ const fetchLäggtill = () => {
 }
 fetchLäggtill();
 
-const newLista = (lista) => {
-    let container = document.createElement('div');
-    container.classList.add('container');
+const newListan = (listan) => {
+    let card = document.createElement('div');
+    card.classList.add('container');
 
-    let listan = document.createElement('div');
-    lista.classList.add('listan');
+    let innercard = document.createElement('div');
+    innercard.classList.add('listan');
     
     let title = document.createElement('h2');
     title.classList.add('title');
-    title.innerText = lista.title;
+    title.innerText = listan.title;
 
     let button = document.createElement('button');
     button.classList.add('Delete');
     button.innerText = 'Ta Bort';
-    button.addEventListener('click', () => console.log('lista.id'))
+    button.addEventListener('click', () => console.log('listan.id'))
 
-    listan.appendChild(title);
-    listan.appendChild(Delete);
-    container.appendChild(listan);
-    output.appendChild(container);
+    innercard.appendChild(title);
+    innercard.appendChild(button);
+    card.appendChild();innercard
+    output.appendChild(card);
 }
 
 const listLäggtill = () => {
     output.innerHTML = '';
-    läggtill.forEach(lista => {
-        newLista(lista);
+    läggtill.forEach(listan => {
+        let _listan = `
+        <div class="container">
+        <div class="listan" id="output">
+            <h2 class="title" id="title">${listan.title}</h2>
+            <button class="Delete">Ta Bort</button>
+        </div>
+        </div>
+        `
+        output.insertAdjacentHTML('beforeend', _listan)
+
+        newListan(listan);
     })
 
 }
 
-const createLista = (MinTitel) => {
+const createListan = (title) => {
     fetch('https://jsonplaceholder.typicode.com/todos',{
         method: 'POST',
         headers: {
@@ -80,7 +90,7 @@ const validatetext2 = id => {
         else {
             texterror.innerText = '';
             
-                createLista(AddInput.value);
+                createListan(AddInput.value);
                 AddInput.value = '';
             return true;
             
