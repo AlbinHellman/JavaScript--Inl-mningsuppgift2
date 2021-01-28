@@ -42,9 +42,9 @@ const listTodos = () => {
     output.innerHTML = '';
     todos.forEach(todo => {
         let _todo = `
-        <div class="container">
-        <div class="listan" id="output">
-            <h2 class="title" id="title">${todo.id}</h2>
+        <div class="container" id="output">
+        <div class="listan">
+            <h2 class="title1" id="title1">${todo.id}</h2>
             <button class="Delete">Ta Bort</button>
         </div>
         </div>
