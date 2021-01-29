@@ -38,25 +38,27 @@ const newTodo = (todo) => {
     output.appendChild(card);
 }
 
+
+
 const listTodos = () => {
     output.innerHTML = '';
     todos.forEach(todo => {
-        let _todo = `
-        <div class="container" id="output">
-        <div class="listan">
-            <h2 class="title1" id="title1">${todo.id}</h2>
-            <button class="Delete">Ta Bort</button>
-        </div>
-        </div>
-        `
-        output.insertAdjacentHTML('beforeend', _todo);
+    //    let _todo = `
+    //    <div class="container" id="output">
+    //    <div class="listan">
+    //        <h2 class="title1" id="title1">${todo.id}</h2>
+    //        <button class="Delete">Ta Bort</button>
+    //    </div>
+    //    </div>
+    //    `
+    //    output.insertAdjacentHTML('beforeend', _todo);
 
         newTodo(todo);
     })
 
 }
 
-const createListan = (title) => {
+const createTodo = (title) => {
     fetch('https://jsonplaceholder.typicode.com/todos',{
         method: 'POST',
         headers: {
@@ -70,7 +72,8 @@ const createListan = (title) => {
     .then(res => res.json())
     .then(data => {
         console.log(data);
-        listTodos
+        todos.unshift(data);
+        listTodos();
     })
 }
 
@@ -90,7 +93,7 @@ const validatetext2 = id => {
         else {
             texterror.innerText = '';
             
-                createListan(AddInput.value);
+                createTodo(AddInput.value);
                 AddInput.value = '';
             return true;
             
