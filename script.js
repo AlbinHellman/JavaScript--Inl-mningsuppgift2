@@ -3,7 +3,10 @@ const Input = document.querySelector('#AddInput')
 const Knapp = document.querySelector('#Submit')
 const output = document.querySelector('#output')
 
-let läggtill = [] ;
+
+
+
+let todos = [] ;
 
 const fetchTodos = () => {
     fetch('https://jsonplaceholder.typicode.com/todos')
@@ -40,6 +43,7 @@ const newTodo = (todo) => {
 
 
 
+
 const listTodos = () => {
     output.innerHTML = '';
     todos.forEach(todo => {
@@ -57,6 +61,7 @@ const listTodos = () => {
     })
 
 }
+
 
 const createTodo = (title) => {
     fetch('https://jsonplaceholder.typicode.com/todos',{
