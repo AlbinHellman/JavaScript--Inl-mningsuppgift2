@@ -47,16 +47,7 @@ const newTodo = (todo) => {
 const listTodos = () => {
     output.innerHTML = '';
     todos.forEach(todo => {
-    //    let _todo = `
-    //    <div class="container" id="output">
-    //    <div class="listan">
-    //        <h2 class="title1" id="title1">${todo.id}</h2>
-    //        <button class="Delete">Ta Bort</button>
-    //    </div>
-    //    </div>
-    //    `
-    //    output.insertAdjacentHTML('beforeend', _todo);
-
+   
         newTodo(todo);
     })
 
@@ -129,3 +120,5 @@ form.addEventListener('submit', (e) => {
     
      
 } )
+
+
